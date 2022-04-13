@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahadsidd107/ecommerce-node-mango-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahadsidd107/ecommerce-node-mango-frontend/issues"
+  },
+  "homepage": "https://github.com/fahadsidd107/ecommerce-node-mango-frontend#readme"
+}
