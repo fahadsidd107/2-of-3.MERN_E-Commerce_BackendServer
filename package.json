@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fahadsidd107/ecommerce-node-mango-frontend/issues"
   },
-  "homepage": "https://github.com/fahadsidd107/ecommerce-node-mango-frontend#readme"
+  "homepage": "https://github.com/fahadsidd107/ecommerce-node-mango-frontend#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
