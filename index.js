@@ -9,6 +9,9 @@ mongoose.connect( process.env.MANGO_DB_URL)
 .then(()=>console.log('Database Connected'))
 .catch((err)=>console.log(err))
 
+app.get('/api' , ()=>console.log('Test API'))
+
+
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is running on port ${PORT}`);;
 })
