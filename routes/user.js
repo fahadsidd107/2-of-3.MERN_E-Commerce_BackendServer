@@ -7,6 +7,7 @@ router.get('/usergettest', (req, res) => {
 router.post('/userposttest', (req, res) => {
   const uname = req.body.uname;
   console.log(uname);
+  res.send(`Test is succesfull ${uname}`);
 }  );   // end of router.post 
 
 module.exports = router;
