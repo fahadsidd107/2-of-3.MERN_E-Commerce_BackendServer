@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const PORT = 7777
 const dotenv = require('dotenv');
 dotenv.config();
+app.use(express.json());
 const userRoute = require('./routes/user');
 
 mongoose.connect( process.env.MANGO_DB_URL)
