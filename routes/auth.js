@@ -11,7 +11,7 @@ router.post('/register', (req, res) => {
     try{
         const savedUser = newUser.save();
     }catch(err){
-        
+        console.log(err);
     }
 })
 
