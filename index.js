@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 app.use(express.json());
 const userRoute = require('./routes/user');
+const authRoute = require('./routes/auth');
 
 mongoose.connect( process.env.MANGO_DB_URL)
 .then(()=>console.log('Database Connected'))
@@ -13,6 +14,7 @@ mongoose.connect( process.env.MANGO_DB_URL)
 
 // app.get('/api' , ()=>console.log('Test API'))
 
+app.use('/api/auth', authRoute);
 app.use('/api/user', userRoute);
 
 
