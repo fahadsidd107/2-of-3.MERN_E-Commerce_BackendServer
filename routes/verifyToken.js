@@ -18,8 +18,14 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-const verifyTokenAndAuthorization = (req,res,()=>{
-    
-})
+const verifyTokenAndAuthorization = (req,res,next)=>{
+    verifyToken(req,res,()=>{
+        if(req.user.id === req.params.id || req.user.isAdmin){
+            next()
+        }else{
+            res.status(403).send({error:"You are not authorized todo this action"})
+        }
+    })
+}
 
-module.exports={ verifyToken };
+module.exports={ verifyToken,verifyTokenAndAuthorization };
