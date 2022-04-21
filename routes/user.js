@@ -11,6 +11,10 @@ const  { verifyToken } =require  ('./verifyToken');
 //   res.send(`Test is succesfull ${uname}`);
 // }  );   // end of router.post 
 
-router.put('/:id', verifyToken , (req,res)=>{})
+router.put('/:id', verifyToken , (req,res)=>{
+    if(req.user.id === req.params.id || req.user.isAdmin){
+        res.send('You are the owner of this user');
+    }
+})
 
 module.exports = router;

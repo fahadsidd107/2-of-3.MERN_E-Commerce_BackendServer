@@ -18,4 +18,8 @@ const verifyToken = (req, res, next) => {
   }
 };
 
+const verifyTokenAndAuthorization = (req,res,()=>{
+    
+})
+
 module.exports={ verifyToken };
