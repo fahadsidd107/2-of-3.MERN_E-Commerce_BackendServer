@@ -13,10 +13,10 @@ const  { verifyToken,verifyTokenAndAuthorization } =require  ('./verifyToken');
 
 router.put('/:id', verifyTokenAndAuthorization , (req,res)=>{
  if(req.body.password){
-    password: CryptoJS.AES.encrypt(
+    req.body.password= CryptoJS.AES.encrypt(
         req.body.password,
         process.env.PASS_SEC
-      ).toString(),
+      ).toString();
  }
 })
 
