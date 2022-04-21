@@ -10,4 +10,6 @@ const router = require('express').Router();
 //   res.send(`Test is succesfull ${uname}`);
 // }  );   // end of router.post 
 
+router.put('/:id',)
+
 module.exports = router;
