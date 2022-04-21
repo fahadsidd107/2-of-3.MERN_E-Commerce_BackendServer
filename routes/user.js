@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const  { verifyToken } =require  ('./verifyToken');
 
 // router.get('/usergettest', (req, res) => {
 //   res.send('Test is succesfull');
@@ -10,6 +11,6 @@ const router = require('express').Router();
 //   res.send(`Test is succesfull ${uname}`);
 // }  );   // end of router.post 
 
-router.put('/:id',)
+router.put('/:id', verifyToken , (req,res)=>{})
 
 module.exports = router;
