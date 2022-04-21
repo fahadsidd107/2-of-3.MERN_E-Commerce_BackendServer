@@ -17,3 +17,5 @@ const verifyToken = (req, res, next) => {
     return res.status(401).send({ error: "No token provided" });
   }
 };
+
+module.exports={ verifyToken };
