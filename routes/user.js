@@ -58,7 +58,7 @@ router.get("/find/:id", verifyTokenAndAdmin , async (req,res)=>{
     res.status(500).json(err);
   }
 })
-//GET ALL USER
+//GET ALL USERS
 router.get("/", verifyTokenAndAdmin , async (req,res)=>{
   const query = req.query.new;
   try{
@@ -69,6 +69,7 @@ router.get("/", verifyTokenAndAdmin , async (req,res)=>{
   }
 })
 
-
+//GET USER STATS
+router.get("/stats",verifyTokenAndAdmin, async (req,res)=>{})
 
 module.exports = router;
