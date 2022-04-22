@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require("./../models/user");
-const  { verifyToken,verifyTokenAndAuthorization } = require ('./verifyToken');
+const  { verifyToken,verifyTokenAndAuthorization,verifyTokenAndAdmin } = require ('./verifyToken');
 
 // router.get('/usergettest', (req, res) => {
 //   res.send('Test is succesfull');
@@ -33,5 +33,8 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
 
 module.exports = router;
