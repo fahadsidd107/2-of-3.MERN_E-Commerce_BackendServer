@@ -12,6 +12,8 @@ const  { verifyToken,verifyTokenAndAuthorization,verifyTokenAndAdmin } = require
 //   res.send(`Test is succesfull ${uname}`);
 // }  );   // end of router.post 
 
+
+//UPDATE USER
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   if (req.body.password) {
     req.body.password = CryptoJS.AES.encrypt(
@@ -34,6 +36,8 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   }
 });
 
+
+//DELETE USER
 router.delete("/:id", verifyTokenAndAuthorization , async (req,res)=>{
   try{
     await User.findByIdAndDelete(req.params.id);
@@ -43,5 +47,14 @@ router.delete("/:id", verifyTokenAndAuthorization , async (req,res)=>{
   }
 })
 
+//GET USER
+router.get("/:id", verifyTokenAndAuthorization , async (req,res)=>{
+  try{
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json("User deleted");
+  }catch(err){
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
