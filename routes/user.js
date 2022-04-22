@@ -48,10 +48,10 @@ router.delete("/:id", verifyTokenAndAuthorization , async (req,res)=>{
 })
 
 //GET USER
-router.get("/:id", verifyTokenAndAuthorization , async (req,res)=>{
+router.get("/:id", verifyTokenAndAdmin , async (req,res)=>{
   try{
-    await User.findByIdAndDelete(req.params.id);
-    res.status(200).json("User deleted");
+    const user= await User.findById(req.params.id);
+    res.status(200).json(user);
   }catch(err){
     res.status(500).json(err);
   }
