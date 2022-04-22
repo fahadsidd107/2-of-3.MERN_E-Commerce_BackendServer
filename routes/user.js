@@ -58,8 +58,8 @@ router.get("/find/:id", verifyTokenAndAdmin , async (req,res)=>{
     res.status(500).json(err);
   }
 })
-//GET USER
-router.get("/find/:id", verifyTokenAndAdmin , async (req,res)=>{
+//GET ALL USER
+router.get("/", verifyTokenAndAdmin , async (req,res)=>{
   try{
     const user= await User.findById(req.params.id);
     const {password , ...others} = user._doc;
