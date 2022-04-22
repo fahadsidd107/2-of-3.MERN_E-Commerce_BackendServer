@@ -70,6 +70,9 @@ router.get("/", verifyTokenAndAdmin , async (req,res)=>{
 })
 
 //GET USER STATS
-router.get("/stats",verifyTokenAndAdmin, async (req,res)=>{})
+router.get("/stats",verifyTokenAndAdmin, async (req,res)=>{
+  const date = new Date();
+  const lastYear=
+})
 
 module.exports = router;
