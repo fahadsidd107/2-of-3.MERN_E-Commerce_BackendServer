@@ -17,6 +17,8 @@ const {
 // }  );   // end of router.post
 
 
+//CREATE PRODUCT 
+router.post()
 
 
 // //UPDATE USER
