@@ -77,6 +77,7 @@ router.get("/stats",verifyTokenAndAdmin, async (req,res)=>{
   try{
     const data = User.aggregate([
       {$match:{createdAt:{$gte:lastYear}}},
+      {}
     ]);
   }catch(err){
     res.status(500).json(err);
