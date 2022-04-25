@@ -18,7 +18,15 @@ const {
 
 
 //CREATE PRODUCT 
-router.post("/",verifyTokenAndAdmin,async(req,res)=>{});
+router.post("/",verifyTokenAndAdmin,async(req,res)=>{
+  const newProduct = new Product(req.body);
+
+  try{
+
+  }catch(err){
+    res.status(500).send(err);
+  }
+});
 
 
 // //UPDATE USER
