@@ -30,7 +30,7 @@ res.status(200).send(savedProduct);
 });
 
 
-//UPDATE USER
+//UPDATE PRODUCT
 router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
@@ -46,15 +46,15 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-// //DELETE USER
-// router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
-//   try {
-//     await User.findByIdAndDelete(req.params.id);
-//     res.status(200).json("User deleted");
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+//DELETE PRODUCT
+router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    res.status(200).json("Product deleted");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // //GET USER
 // router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
