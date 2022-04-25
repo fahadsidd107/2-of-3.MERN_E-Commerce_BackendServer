@@ -32,17 +32,15 @@ res.status(200).send(savedProduct);
 
 //UPDATE USER
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
-
-
   try {
-    const updatedUser = await User.findByIdAndUpdate(
+    const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
         $set: req.body,
       },
       { new: true }
     );
-    res.status(200).json(updatedUser);
+    res.status(200).json(updatedProduct);
   } catch (err) {
     res.status(500).json(err);
   }
