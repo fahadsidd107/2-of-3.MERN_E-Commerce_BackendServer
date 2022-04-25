@@ -18,7 +18,7 @@ const {
 
 
 //CREATE PRODUCT 
-router.post("/",async(req,res)=>{});
+router.post("/",verifyTokenAndAdmin,async(req,res)=>{});
 
 
 // //UPDATE USER
