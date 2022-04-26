@@ -65,7 +65,10 @@ let products
       products = await Product.find().sort({ createdAt: -1 }).limit(5);
     }else if(Categoryquery){
       products = await Product.find({categories:{$in:[Categoryquery]}});
+    }else{
+      products = await Product.find();
     }
+    res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }
