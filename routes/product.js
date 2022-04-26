@@ -62,7 +62,7 @@ router.get("/", async (req, res) => {
 let products
 
     if (Newquery) {
-      products = await Product.find({ new: true });
+      products = await Product.find().sort({ createdAt: -1 });
     }
   } catch (err) {
     res.status(500).json(err);
