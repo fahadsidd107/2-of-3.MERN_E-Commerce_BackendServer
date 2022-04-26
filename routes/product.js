@@ -56,12 +56,14 @@ router.get("/find/:id", async (req, res) => {
 
 //GET ALL PRODUCTS
 router.get("/", async (req, res) => {
-  const query = req.query.new;
+  const Newquery = req.query.new;
+  const Categoryquery = req.query.category;
   try {
-    const users = query
-      ? await User.find().sort({ _id: -1 }).limit(5)
-      : await User.find();
-    res.status(200).json(users);
+let products
+
+    if (Newquery) {
+      products = await Product.find({ new: true });
+    }
   } catch (err) {
     res.status(500).json(err);
   }
