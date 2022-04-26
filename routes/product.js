@@ -64,7 +64,7 @@ let products
     if (Newquery) {
       products = await Product.find().sort({ createdAt: -1 }).limit(5);
     }else if(Categoryquery){
-      products = await Product.find({categories});
+      products = await Product.find({categories:{$in:[Categoryquery]}});
     }
   } catch (err) {
     res.status(500).json(err);
