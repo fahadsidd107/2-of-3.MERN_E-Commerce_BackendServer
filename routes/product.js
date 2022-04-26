@@ -6,19 +6,17 @@ const {
   verifyTokenAndAdmin,
 } = require("./verifyToken");
 
-
-//CREATE PRODUCT 
-router.post("/",verifyTokenAndAdmin,async(req,res)=>{
+//CREATE PRODUCT
+router.post("/", verifyTokenAndAdmin, async (req, res) => {
   const newProduct = new Product(req.body);
 
-  try{
-const savedProduct = await newProduct.save();
-res.status(200).send(savedProduct);
-  }catch(err){
+  try {
+    const savedProduct = await newProduct.save();
+    res.status(200).send(savedProduct);
+  } catch (err) {
     res.status(500).send(err);
   }
 });
-
 
 //UPDATE PRODUCT
 router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
