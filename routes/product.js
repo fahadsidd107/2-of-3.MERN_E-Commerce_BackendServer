@@ -63,7 +63,7 @@ let products
 
     if (Newquery) {
       products = await Product.find().sort({ createdAt: -1 }).limit(5);
-    }else(Categoryquery){
+    }else if(Categoryquery){
       products = await Product.find({categories});
     }
   } catch (err) {
