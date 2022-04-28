@@ -34,7 +34,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   }
 });
 
-//DELETE PRODUCT
+//DELETE CART
 router.delete("/:id", verifyTokenAndAuthorization , async (req, res) => {
   try {
     await Cart.findByIdAndDelete(req.params.id);
@@ -44,35 +44,35 @@ router.delete("/:id", verifyTokenAndAuthorization , async (req, res) => {
   }
 });
 
-// //GET PRODUCT
-// router.get("/find/:id", async (req, res) => {
-//   try {
-//     const product = await Product.findById(req.params.id);
-//     res.status(200).json(product);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+//GET CART
+router.get("/find/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.status(200).json(product);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// //GET ALL PRODUCTS
-// router.get("/", async (req, res) => {
-//   const Newquery = req.query.new;
-//   const Categoryquery = req.query.category;
-//   try {
-// let products
+//GET ALL PRODUCTS
+router.get("/", async (req, res) => {
+  const Newquery = req.query.new;
+  const Categoryquery = req.query.category;
+  try {
+let products
 
-//     if (Newquery) {
-//       products = await Product.find().sort({ createdAt: -1 }).limit(1);
-//     }else if(Categoryquery){
-//       products = await Product.find({categories:{$in:[Categoryquery]}});
-//     }else{
-//       products = await Product.find();
-//     }
-//     res.status(200).json(products);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    if (Newquery) {
+      products = await Product.find().sort({ createdAt: -1 }).limit(1);
+    }else if(Categoryquery){
+      products = await Product.find({categories:{$in:[Categoryquery]}});
+    }else{
+      products = await Product.find();
+    }
+    res.status(200).json(products);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 
