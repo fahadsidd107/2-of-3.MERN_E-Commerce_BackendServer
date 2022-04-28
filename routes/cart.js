@@ -35,10 +35,10 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 });
 
 //DELETE PRODUCT
-router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+router.delete("/:id", verifyTokenAndAuthorization , async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
-    res.status(200).json("Product deleted");
+    await Cart.findByIdAndDelete(req.params.id);
+    res.status(200).json("Cart deleted");
   } catch (err) {
     res.status(500).json(err);
   }
