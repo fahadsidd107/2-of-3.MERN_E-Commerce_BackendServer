@@ -55,7 +55,7 @@ router.get("/find/:id", verifyTokenAndAuthorization , async (req, res) => {
 });
 
 //GET ALL 
-router.get()
+router.get('/',verifyTokenAndAdmin, async (req,res)=>{})
 
 
 
