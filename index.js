@@ -8,6 +8,7 @@ app.use(express.json());
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
+const cartRoute = require("./routes/cart");
 
 mongoose
   .connect(process.env.MANGO_DB_URL)
@@ -19,6 +20,7 @@ mongoose
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/product", productRoute);
+
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is running on port ${PORT}`);
