@@ -7,12 +7,12 @@ const {
 } = require("./verifyToken");
 
 //CREATE CART
-router.post("/", verifyTokenAndAdmin, async (req, res) => {
-  const newProduct = new Product(req.body);
+router.post("/", verifyToken, async (req, res) => {
+  const newCart = new Cart(req.body);
 
   try {
-    const savedProduct = await newProduct.save();
-    res.status(200).send(savedProduct);
+    const savedCart = await newCart.save();
+    res.status(200).send(savedCart);
   } catch (err) {
     res.status(500).send(err);
   }
