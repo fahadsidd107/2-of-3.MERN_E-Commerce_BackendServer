@@ -34,8 +34,8 @@ router.put("/:id",verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//DELETE CART
-router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
+//DELETE ORDER
+router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     await Cart.findByIdAndDelete(req.params.id);
     res.status(200).json("Cart deleted");
