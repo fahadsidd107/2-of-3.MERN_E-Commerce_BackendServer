@@ -8,11 +8,11 @@ const {
 
 //CREATE ORDER
 router.post("/", verifyToken, async (req, res) => {
-  const newCart = new Cart(req.body);
+  const newOrder = new Order(req.body);
 
   try {
-    const savedCart = await newCart.save();
-    res.status(200).send(savedCart);
+    const savedOrder = await newOrder.save();
+    res.status(200).send(savedOrder);
   } catch (err) {
     res.status(500).send(err);
   }
