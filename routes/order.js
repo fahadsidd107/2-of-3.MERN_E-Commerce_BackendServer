@@ -65,7 +65,7 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
 });
 
 //GET MONTHLY INCOME
-routter.get('/',(req,res)=>{})
+routter.get('/income',verifyTokenAndAdmin,(req,res)=>{})
 
 
 module.exports = router;
