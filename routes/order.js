@@ -72,7 +72,7 @@ routter.get('/income',verifyTokenAndAdmin,(req,res)=>{
 
   try{
     const income = await Order.aggregate([
-      {$match:{createdAt:{}}},
+      {$match:{createdAt:{$gte:previousMonth}}},
     ])
   }catch(err){res.status(500).json(err)}
 
