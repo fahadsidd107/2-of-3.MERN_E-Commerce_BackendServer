@@ -67,8 +67,9 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
 //GET MONTHLY INCOME
 routter.get('/income',verifyTokenAndAdmin,(req,res)=>{
   const date = new Date();
-  const lastMonth = new Date(new Date().setMonth(date.getMonth() - 1));
-  
+  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
+
 })
 
 
