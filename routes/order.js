@@ -47,21 +47,25 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
 //GET USER ORDERS
 router.get("/find/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
-    const cart = await Cart.findOne(req.params.id);
-    res.status(200).json(cart);
+    const orders = await Order.findOne(req.params.id);
+    res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-//GET ALL
+//GET ALL ORDERS
 router.get("/", verifyTokenAndAdmin, async (req, res) => {
   try {
-    const carts = await Cart.find();
-    res.status(200).json(carts);
+    const orders = await Order.find();
+    res.status(200).json(orders);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+//GET MONTHLY INCOME
+routter.get()
+
 
 module.exports = router;
