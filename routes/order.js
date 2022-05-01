@@ -70,6 +70,8 @@ routter.get('/income',verifyTokenAndAdmin,(req,res)=>{
   const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
   const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
 
+  try{}catch(err){}
+
 })
 
 
