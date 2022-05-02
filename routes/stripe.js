@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
-router.post("/", async (req, res) => {})
+router.post("/payment", async (req, res) => {})
 
 module.exports = router;
