@@ -19,7 +19,7 @@ router.post("/", verifyToken, async (req, res) => {
 });
 
 //UPDATE ORDER
-router.put("/:id",verifyTokenAndAdmin, async (req, res) => {
+router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     const updatedOrder = await Order.findByIdAndUpdate(
       req.params.id,
@@ -91,6 +91,5 @@ router.get("/income", verifyTokenAndAdmin, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
