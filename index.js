@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-var cors = require('cors')  //use this
+var cors = require("cors"); //use this
 const PORT = 7777;
 const dotenv = require("dotenv");
 dotenv.config();
@@ -18,7 +18,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // app.get('/api' , ()=>console.log('Test API'))
-app.use(cors())
+app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/product", productRoute);
