@@ -3,7 +3,7 @@ const User = require("./../models/user");
 const CryptoJS = require("crypto-js");
 const dotenv = require("dotenv");
 dotenv.config();
-const jwt = require("jsonwebtoken");
+
 
 //Register
 router.post("/register", async (req, res) => {
